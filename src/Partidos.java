@@ -16,8 +16,7 @@ public class Partidos extends javax.swing.JFrame {
      */
     public Partidos() {
         initComponents();
-        partidos=new Equipo();
-        this.TabladePosiciones.setModel(partidos);
+       
     }
 
     /**

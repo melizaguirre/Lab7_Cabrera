@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,6 +12,7 @@
  * @author BAC
  */
 public class Equipo {
+    ArrayList equipos = new ArrayList();
     private String nombreEquipo;
     private int partidosJugados;
     private int ganados;

@@ -1,5 +1,6 @@
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
@@ -21,22 +22,7 @@ public class main extends javax.swing.JFrame {
     public main() {
         initComponents();
     }
-    private void habilitarBotones(){
-        this.jMenuCrear.setEnabled(true);
-        this.jMenuModificar.setEnabled(true);
-        this.jMenuEliminar.setEnabled(true);
-        
-    }
-    private void CrearEquipo() throws IOException{
-        File Partidos = new File("Partidos.txt");
-        if (Partidos.exists()){
-            habilitarBotones();
-        }else{
-            JOptionPane.showMessageDialog(null, "Equipo creado");
-            Partidos.createNewFile();
-            habilitarBonotones();
-        }
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
