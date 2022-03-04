@@ -1,3 +1,8 @@
+
+import java.io.File;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,6 +21,22 @@ public class main extends javax.swing.JFrame {
     public main() {
         initComponents();
     }
+    private void habilitarBotones(){
+        this.jMenuCrear.setEnabled(true);
+        this.jMenuModificar.setEnabled(true);
+        this.jMenuEliminar.setEnabled(true);
+        
+    }
+    private void CrearEquipo() throws IOException{
+        File Partidos = new File("Partidos.txt");
+        if (Partidos.exists()){
+            habilitarBotones();
+        }else{
+            JOptionPane.showMessageDialog(null, "Equipo creado");
+            Partidos.createNewFile();
+            habilitarBonotones();
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,44 +49,44 @@ public class main extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuCrear = new javax.swing.JMenuItem();
+        jMenuModificar = new javax.swing.JMenuItem();
+        jMenuEliminar = new javax.swing.JMenuItem();
+        jMenuCargarArchivo = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuSimular = new javax.swing.JMenuItem();
+        jMenuMostrarTabla = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu1.setText("Equipo");
 
-        jMenuItem1.setText("Crear");
-        jMenu1.add(jMenuItem1);
+        jMenuCrear.setText("Crear");
+        jMenu1.add(jMenuCrear);
 
-        jMenuItem2.setText("Modificar");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jMenuModificar.setText("Modificar");
+        jMenuModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                jMenuModificarActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(jMenuModificar);
 
-        jMenuItem3.setText("Eliminar");
-        jMenu1.add(jMenuItem3);
+        jMenuEliminar.setText("Eliminar");
+        jMenu1.add(jMenuEliminar);
 
-        jMenuItem4.setText("Cargar Archivo");
-        jMenu1.add(jMenuItem4);
+        jMenuCargarArchivo.setText("Cargar Archivo");
+        jMenu1.add(jMenuCargarArchivo);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Partido");
 
-        jMenuItem5.setText("Simular");
-        jMenu2.add(jMenuItem5);
+        jMenuSimular.setText("Simular");
+        jMenu2.add(jMenuSimular);
 
-        jMenuItem6.setText("Tabla de Posiciones");
-        jMenu2.add(jMenuItem6);
+        jMenuMostrarTabla.setText("Tabla de Posiciones");
+        jMenu2.add(jMenuMostrarTabla);
 
         jMenuBar1.add(jMenu2);
 
@@ -85,9 +106,9 @@ public class main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void jMenuModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuModificarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_jMenuModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,11 +149,11 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuCargarArchivo;
+    private javax.swing.JMenuItem jMenuCrear;
+    private javax.swing.JMenuItem jMenuEliminar;
+    private javax.swing.JMenuItem jMenuModificar;
+    private javax.swing.JMenuItem jMenuMostrarTabla;
+    private javax.swing.JMenuItem jMenuSimular;
     // End of variables declaration//GEN-END:variables
 }
